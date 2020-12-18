@@ -5,9 +5,12 @@ import ajax from '@codexteam/ajax';
  */
 export default class Uploader {
   /**
-   * @param {Object} config
-   * @param {function} onUpload - callback for successful file upload
-   * @param {function} onError - callback for uploading errors
+   * @param config.config
+   * @param {object} config
+   * @param {Function} onUpload - callback for successful file upload
+   * @param {Function} onError - callback for uploading errors
+   * @param config.onUpload
+   * @param config.onError
    */
   constructor({ config, onUpload, onError }) {
     this.config = config;
@@ -17,8 +20,9 @@ export default class Uploader {
 
   /**
    * Handle clicks on the upload file button
+   *
    * @fires ajax.transport()
-   * @param {function} onPreview - callback fired when preview is ready
+   * @param {Function} onPreview - callback fired when preview is ready
    */
   uploadSelectedFile({ onPreview }) {
     ajax.transport({
@@ -26,13 +30,14 @@ export default class Uploader {
       accept: this.config.types,
       headers: this.config.additionalRequestHeaders,
       beforeSend: () => onPreview(),
-      fieldName: this.config.field
+      fieldName: this.config.field,
     }).then((response) => {
       this.onUpload(response);
-    }).catch((error) => {
-      const message = (error && error.message) ? error.message : this.config.errorMessage;
+    })
+      .catch((error) => {
+        const message = (error && error.message) ? error.message : this.config.errorMessage;
 
-      this.onError(message);
-    });
+        this.onError(message);
+      });
   }
 }
