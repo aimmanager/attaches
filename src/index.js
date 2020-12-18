@@ -45,6 +45,7 @@ const LOADER_TIMEOUT = 500;
  * @property {string} types - available mime-types
  * @property {string} placeholder
  * @property {string} errorMessage
+ * @property {object} additionalRequestHeaders - allows to pass custom headers with Request
  */
 
 /**
@@ -80,7 +81,8 @@ export default class AttachesTool {
       field: config.field || 'file',
       types: config.types || '*',
       buttonText: config.buttonText || 'Select file to upload',
-      errorMessage: config.errorMessage || 'File upload failed'
+      errorMessage: config.errorMessage || 'File upload failed',
+      additionalRequestHeaders: config.additionalRequestHeaders || {},
     };
 
     this.data = data;

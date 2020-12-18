@@ -24,6 +24,7 @@ export default class Uploader {
     ajax.transport({
       url: this.config.endpoint,
       accept: this.config.types,
+      headers: this.config.additionalRequestHeaders,
       beforeSend: () => onPreview(),
       fieldName: this.config.field
     }).then((response) => {
