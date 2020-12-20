@@ -83,6 +83,7 @@ export default class AttachesTool {
       buttonText: config.buttonText || 'Select file to upload',
       errorMessage: config.errorMessage || 'File upload failed',
       additionalRequestHeaders: config.additionalRequestHeaders || {},
+      uploader: config.uploader || undefined,
     };
 
     this.data = data;
@@ -257,10 +258,8 @@ export default class AttachesTool {
    * @param {UploadResponseFormat} response
    */
   onUpload(response) {
-    const body = response.body;
-
-    if (body.success && body.file) {
-      const receivedFileData = body.file || {};
+    if (response.success && response.file) {
+      const receivedFileData = response.file || {};
       const filename = receivedFileData.name;
       const extension = filename && filename.split('.').pop();
 
