@@ -4,7 +4,6 @@
     padding: 13px 20px;
     border: 1px solid #e6e9eb;
     border-radius: 3px;
-    background: #fff;
 
     ^&__file-info {
       flex-grow: 8;
@@ -31,7 +30,6 @@
         font-size: 8px;
         font-weight: 900;
         text-transform: uppercase;
-        background: #fff;
         line-height: 150%;
         content: attr(data-extension);
       }
