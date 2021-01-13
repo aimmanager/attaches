@@ -1,3 +1,6 @@
+Credits for fork to SebastianZimmer
+https://github.com/SebastianZimmer/attaches
+
 ![](https://badgen.net/badge/Editor.js/v2.0/blue)
 # Attaches Tool
 Attaches Tool for the [Editor.js](https://codex.so/editor).
