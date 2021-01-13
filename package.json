@@ -1,7 +1,7 @@
 {
-  "name": "@editorjs/attaches",
-  "version": "1.0.2",
-  "repository": "https://github.com/editor-js/attaches",
+  "name": "@feguerrac/editorjs-attaches",
+  "version": "1.0.0",
+  "repository": "https://github.com/aimmanager/attaches",
   "license": "MIT",
   "scripts": {
     "build": "npx webpack --mode production",
